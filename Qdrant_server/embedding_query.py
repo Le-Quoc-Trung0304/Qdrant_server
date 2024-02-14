@@ -123,7 +123,6 @@ def extract_chunk_from_pdf(file, chunk_size):
         current_pos = boundary
     return chunks
 
-@app.route('/upload', methods=['PUT'])
 
 def download_file_from_s3(bucket_name, user_name, file_name, local_path):
 
@@ -136,6 +135,7 @@ def download_file_from_s3(bucket_name, user_name, file_name, local_path):
         print(f"Error downloading file: {e}")
 
 
+@app.route('/upload', methods=['PUT'])
 def upload_and_process():
     if request.method == 'PUT':
         try:
