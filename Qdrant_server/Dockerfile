@@ -11,7 +11,7 @@ RUN apt-get update && \
 WORKDIR /app
 
 # Cài đặt các thư viện Python cần thiết
-RUN pip install sentence-transformers qdrant_client flask PyPDF2
+RUN pip install sentence-transformers qdrant_client flask PyPDF2 boto3
 
 # Cài đặt và sử dụng git lfs
 RUN git lfs install && \
